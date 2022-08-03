@@ -6,18 +6,36 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function Button(){
-  const [value, setValue] = useState(0)
+function IncrementValue(props){
   return(
-    <button onClick={() => setValue(value+1)}>
-      Button {value}
+    <button onClick={props.OnClick}>
+      +1
     </button>
+  )
+}
+
+function DisplayValue(props){
+  return (
+    <div>
+      {props.message}
+    </div>
+  )
+}
+
+function MyApp(){
+  const [counter, setCounter] = useState(0)
+  const incrementCounter = () => setCounter(counter+1)
+  return(
+    <>
+    <IncrementValue OnClick={incrementCounter}/>
+    <DisplayValue message={counter}/>
+    </>
   )
 }
 
 root.render(
   <React.StrictMode>
-    <Button />
+    <MyApp />
   </React.StrictMode>
 );
 
