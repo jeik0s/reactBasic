@@ -6,42 +6,41 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function IncrementValue(props){
-  const hendleClick = () => props.OnClick(props.incrementBy);
-  return(
-    <button onClick={hendleClick}>
-      +{props.incrementBy}
-    </button>
+function ShowInput(props){
+  return (
+    React.createElement(
+      'pre',
+      null,
+      "{props.newTime}"
+    )
   )
 }
 
-function DisplayValue(props){
-  return (
-    <div>
-      {props.message}
-    </div>
+function ShowTime(){
+  return(
+    React.createElement(
+      'input',
+      null
+    )
   )
 }
+
 
 function MyApp(){
-  const [counter, setCounter] = useState(0)
-  const incrementCounter = (n) => setCounter(counter+n)
-  return(
+  var currentTime = 'adsads'
+  return (
     <>
-    <IncrementValue OnClick={incrementCounter} incrementBy={1}/>
-    <IncrementValue OnClick={incrementCounter} incrementBy={5}/>
-    <IncrementValue OnClick={incrementCounter} incrementBy={10}/>
-    <IncrementValue OnClick={incrementCounter} incrementBy={100}/>
-    <DisplayValue message={counter}/>
+    <ShowInput />
+    <ShowTime newTime={currentTime}/>
     </>
   )
 }
 
 root.render(
-  <React.StrictMode>
-    <MyApp />
-  </React.StrictMode>
+  <MyApp />
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
