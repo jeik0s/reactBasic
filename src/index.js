@@ -7,9 +7,10 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function IncrementValue(props){
+  const hendleClick = () => props.OnClick(props.incrementBy);
   return(
-    <button onClick={props.OnClick}>
-      +1
+    <button onClick={hendleClick}>
+      +{props.incrementBy}
     </button>
   )
 }
@@ -24,10 +25,13 @@ function DisplayValue(props){
 
 function MyApp(){
   const [counter, setCounter] = useState(0)
-  const incrementCounter = () => setCounter(counter+1)
+  const incrementCounter = (n) => setCounter(counter+n)
   return(
     <>
-    <IncrementValue OnClick={incrementCounter}/>
+    <IncrementValue OnClick={incrementCounter} incrementBy={1}/>
+    <IncrementValue OnClick={incrementCounter} incrementBy={5}/>
+    <IncrementValue OnClick={incrementCounter} incrementBy={10}/>
+    <IncrementValue OnClick={incrementCounter} incrementBy={100}/>
     <DisplayValue message={counter}/>
     </>
   )
