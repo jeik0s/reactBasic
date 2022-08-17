@@ -9,5 +9,6 @@ Differences between react and html DOM <br />
 https://app.pluralsight.com/course-player?clipId=60ff4975-9869-49a5-9444-b80917e42774
 
 # React Day 3
-https://github.com/MicheleBertoli/css-in-js
+Simple first app 
+https://github.com/MicheleBertoli/css-in-js <br />
 https://app.pluralsight.com/course-player?clipId=8d1769a6-cfd3-4005-ad39-2cd013618cde
