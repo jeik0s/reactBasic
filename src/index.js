@@ -1,43 +1,65 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import XXX from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function ShowInput(props){
-  return (
-    React.createElement(
-      'pre',
-      null,
-      "{props.newTime}"
+// const App = ({title}) => (
+//   <div className='header'>{title}</div>
+// );
+
+class RandomColor extends React.Component{
+  render(){
+    return(
+      <div style={{color: Math.random() < 0.5 ? 'green' : 'red'}}>
+      Diffrent color, depends on random number
+      </div>
+    );
+  }
+}
+
+class Card extends React.Component{
+
+  render () {
+    return(
+      <div className='github-profile'>
+        <img src="https://bobbyhadz.com/images/blog/react-prevent-multiple-button-clicks/thumbnail.webp"alt="car"/>
+        <div className='info'>
+          <div className='name'>Name here...</div>
+          <div className='company'>Company here...</div>
+        </div>
+      </div>
     )
-  )
+  }
 }
 
-function ShowTime(){
-  return(
-    React.createElement(
-      'input',
-      null
-    )
-  )
+class App extends React.Component {
+  render () {
+    return <div className='header'>{this.props.title}</div>;
+  }
 }
 
-
-function MyApp(){
-  var currentTime = 'adsads'
-  return (
-    <>
-    <ShowInput />
-    <ShowTime newTime={currentTime}/>
-    </>
-  )
-}
+// function MyApp(){
+//   return (
+//     <>
+//     <div>
+//     <App title="The github cards app"></App>
+//     <Card></Card>
+//     </div>
+//     </>
+//   )
+// }
 
 root.render(
-  <MyApp />
+  <>
+  <div>
+  <RandomColor></RandomColor>
+  <App title="The github cards app"></App>
+  <Card></Card>
+  </div>
+  </>
 );
 
 
