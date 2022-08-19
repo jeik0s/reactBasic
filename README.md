@@ -16,3 +16,7 @@ https://app.pluralsight.com/course-player?clipId=8d1769a6-cfd3-4005-ad39-2cd0136
 # React Day 4
 Simple app (done) <br />
 https://app.pluralsight.com/course-player?clipId=63738d79-4218-4d2d-9416-72356e963912
+
+# React Day 5
+New app - star game <br />
+https://app.pluralsight.com/course-player?clipId=340d87a0-3e41-49b7-9e5d-f8d0a0ebceb5
