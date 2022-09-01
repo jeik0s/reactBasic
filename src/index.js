@@ -1,81 +1,43 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+const PlayNumber = (props) => (
+  <button className="number" onClick={() => console.log(props.number)}>
+    {props.number}
+    </button>
+)
+
 const StarsDisplay = props => (
   <>
-    {utils.range(1, props.count).map(starId =>
-        <div key={starId} className='star' />
-      )}
+  {utils.range(1,props.count).map(starId => 
+    <div key={starId} className="star"></div>
+  )}
   </>
 )
 
-const PlayNumber = props =>(
-  <button className="number"
-    style={{ backgroundColor: colors[props.status]}}
-    onClick={() => props.onClick(props.number, props.status)}>
-    {props.buttonNo}
-  </button>
-)
-
 const StarMatch = () => {
-  const [stars, setStars] = useState(utils.random(1,9));
-  const [availableNumbers, setavailableNumbers] = useState(utils.range(1,9))
-  const [candidateNums,setcandidateNums] = useState([])
+  const [stars, setStars] = useState(utils.random(1,9))
 
-
-  const candidatesAreWrong = utils.sum(candidateNums) > stars
-
-  const numberStatus = (number) => {
-    if(!availableNumbers.includes(number)) {
-      return 'used'
-    }
-    if(candidateNums.includes(number)){
-      return candidatesAreWrong ? 'wrong' : 'candidate';
-    }
-    return 'available'
-  }
-
-  const onNumberClick = (number, currentStatus) => {
-    console.log(number, currentStatus)
-    if(currentStatus == "used"){
-      return;
-    }
-    const newCandidateNums = candidateNums.concat(number)
-    if(utils.sum(newCandidateNums) !== stars ){
-      setcandidateNums(newCandidateNums)
-    } else {
-      const newAvailableNums = availableNumbers.filter(
-        n => !newCandidateNums.includes(n)
-      )
-      setStars(utils.randomSumIn(newAvailableNums,9))
-      setavailableNumbers(newAvailableNums)
-      setcandidateNums([])
-    }
-
-  }
-
-  return (
+  return(
     <div className="game">
       <div className="help">
         Pick 1 or more numbers that sum to the number of stars
       </div>
       <div className="body">
         <div className="left">
-          <StarsDisplay count={stars}/>
+          {
+            <StarsDisplay 
+            count={stars}
+            />
+            }
         </div>
         <div className="right">
-        {utils.range(1,9).map(buttonNo =>
-              <PlayNumber  
-                key={buttonNo}
-                status={numberStatus(buttonNo)} 
-                buttonNo={buttonNo} 
-                onClick={onNumberClick}
-              />
-          )}
+            {utils.range(1,9).map(number => (
+              <PlayNumber key={number} number={number} /> )
+              )}
         </div>
       </div>
       <div className="timer">Time Remaining: 10</div>
@@ -83,31 +45,11 @@ const StarMatch = () => {
   );
 };
 
+
 root.render(
   <StarMatch />
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-reportWebVitals();
 
 const colors = {
   available: 'lightgray',
@@ -115,6 +57,7 @@ const colors = {
   wrong: 'lightcoral',
   candidate: 'deepskyblue',
 };
+
 
 // Math science
 const utils = {

@@ -20,3 +20,7 @@ https://app.pluralsight.com/course-player?clipId=63738d79-4218-4d2d-9416-72356e9
 # React Day 5
 New app - star game <br />
 https://app.pluralsight.com/course-player?clipId=340d87a0-3e41-49b7-9e5d-f8d0a0ebceb5
+
+# React Day 6 (back after 10 days)
+regres - starting over <br />
+https://app.pluralsight.com/course-player?clipId=b407cd7e-5b68-4bca-9762-914e502aac2f
