@@ -28,3 +28,7 @@ https://app.pluralsight.com/course-player?clipId=b407cd7e-5b68-4bca-9762-914e502
 # React Day 7 
 Finally understanding the logic! <br />
 https://app.pluralsight.com/course-player?clipId=bf44fffe-f917-4cce-a5c0-fad553c12899
+
+# React Day 8 
+Side effects and Hooks! <br />
+https://app.pluralsight.com/course-player?clipId=d45a3e8e-65a8-40ff-9819-b88ff51fd896
